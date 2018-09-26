@@ -1,4 +1,4 @@
-# SHIFT 
+# BAIT SOFTWARE 
 
 Includes complete Bootstrap 4.0.0 with gulp and sass
 
