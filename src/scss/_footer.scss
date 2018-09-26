@@ -1,0 +1,28 @@
+/* FOOTER */
+/* VARIABLES */
+$footerParagraphColor: #10113e;
+$footerCopyrightColor: #fff;
+
+footer {
+	position: relative;
+	.footer-info{
+		position: relative;
+		z-index: 1;
+	}
+	.footer-copyright{
+		position: relative;
+		z-index: 1;
+		padding: 13px 0;
+		background-color: $textColorBlue;
+		p{
+			color: $footerCopyrightColor;
+			font-size: 13px;
+			margin-bottom: 0px;
+		}
+	}
+}
+
+
+// XS, SM
+@media ( max-width: 992px ){
+}

@@ -1,0 +1,23 @@
+{
+  "name": "BAIT",
+  "version": "1.0.0",
+  "description": "BAIT Website",
+  "main": "index.js",
+  "scripts": {
+    "start": "gulp"
+  },
+  "dependencies": {
+    "bootstrap": "^4.1.2"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.24.6",
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^2.4.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-uglify": "^1.5.4"
+  },
+  "author": "Fernando Poli",
+  "license": "ISC"
+}

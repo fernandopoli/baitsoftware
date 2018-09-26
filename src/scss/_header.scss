@@ -1,0 +1,339 @@
+/* HEADER */
+
+/* VARIABLES */
+$headerBgColor: rgba(255,255,255,0.95);
+$headerMobileBgColor: $headerBgColor;
+$headerIconBarInactive: $textColorGray;
+$headerIconBarActive: $textColorGray;
+$headerNavBarLinksInactive: $btnColorWhite;
+$headerNavBarLinksActive: $textColorGray;
+$headerNavBarLinksOn: #2858E9;
+$headerNavItemHoverMobile: #EEEEEE;
+
+
+.header {
+  padding: 15px 0px;
+  background-color: transparent;
+  @include transition(all, 300ms, ease);
+  #loginWrapper{
+    a{
+      &:hover, &:focus{
+        text-decoration: none;
+      }
+    }
+  }
+  .navbar-collapse{
+    flex-grow: initial;
+  }
+  #navBarIdioma{
+    margin-right: 15px;
+    li{
+      padding: 5px;
+      color: $headerNavBarLinksInactive;
+      @include fontMontserrat(12px, 700);
+      a{
+        color: $headerNavBarLinksInactive;
+        @include transition(all, 300ms, ease);  
+        &:hover{
+          text-decoration: none;
+        }
+      }
+      &.active{
+        &:hover{
+          a{
+            color: $textColorDefault;
+          }
+        }
+        a{
+          color: $textColorDefault;
+        }          
+      }
+    }
+  }
+  #naBarLinks{
+    li{
+      color: $headerNavBarLinksInactive;
+      @include fontMontserrat(14px, 700);
+      a{
+        display: block;
+        padding: 4px 20px;
+        border: 2px solid transparent;
+        border-radius: 5px;
+        color: $headerNavBarLinksInactive;
+        @include fontMontserrat(14px, 700);
+        @include transition(all, 300ms, ease);    
+        &:hover, &:focus{
+          text-decoration: none;     
+          border: 2px solid $headerNavBarLinksInactive;  
+        }    
+      }
+      &:hover, &:focus{
+        a{
+          text-decoration: none;     
+          border: 2px solid $textColorDefault;  
+        }
+      }
+      &.active{
+        a{
+          text-decoration: none;     
+          border: 2px solid $headerNavBarLinksInactive;  
+        }
+      }      
+    }
+  }
+  #logo{
+    *{
+      @include transition(all, 300ms, ease);
+    }
+    #logotipo,
+    #isotipo{
+      > *{
+        fill: #fff;  
+      } 
+    }
+  }
+  &.active-header{
+    background-color: $headerBgColor; 
+    @include box-shadow-out(0px, 0px, 4px, 0px, 0.5);
+    @include transition(all, 300ms, ease);
+    #navBarIdioma{
+      li{        
+        color: $headerNavBarLinksOn;
+        a{
+          color: $headerNavBarLinksOn;
+        }
+        &.active{
+          &:hover{
+            a{
+              color: $textColorDefault;
+            }
+          }
+          a{
+            color: $textColorDefault;
+          }          
+        }
+      }
+    }
+    #naBarLinks{
+      li{
+        color: $textColorDefault;  
+        &.active{
+          a{
+            color: $headerNavBarLinksOn;    
+            border-color: $headerNavBarLinksOn; 
+            &:hover, &:focus{
+              color: $headerNavBarLinksOn;
+              border-color: $headerNavBarLinksOn;  
+            }    
+          }
+        }
+        a{
+          color: $headerNavBarLinksOn;
+          &:hover, &:focus{
+            color: $headerNavBarLinksOn;
+            border-color: lighten($headerNavBarLinksActive, 50%);  
+          }          
+        }
+      }      
+    }
+    #logo{
+      *{
+        @include transition(all, 300ms, ease);
+      }
+      #isotipo{
+        > * {
+          fill: $textColorDefault;
+        }          
+      }
+      #logotipo{
+        > *{
+          fill: $textColorBlue;
+        }
+      }
+    }
+    .navbar-toggle{
+      &.collapse{
+        .icon-bar{
+          background-color: $textColorDefault;
+        }
+      }
+      .icon-bar{
+        background-color: $textColorDefault;
+      }
+    }
+    .navbar-toggle{
+      .icon-bar{
+        background-color: $textColorDefault; 
+      }
+      &.collapsed{
+        .icon-bar{
+          background-color: $textColorDefault; 
+        }
+      }
+    }
+  }
+  // MOBILE
+  .navbar-toggle{
+    margin-right: 15px;
+    width: 30px;
+    height: 20px;
+    padding: 0px;
+    border: 0 none;
+    background: transparent;
+    position: relative;
+    &:hover, &:focus{
+      outline: 0px none;
+      background: transparent;
+    }
+    .icon-bar{    
+      display: block;
+      position: absolute;
+      height: 3px;
+      width: 50%;
+      background-color: $btnColorWhite;
+      opacity: 1;
+      margin: 0px;                  
+      @include transition(all, 200ms, ease);
+      +.icon-bar{
+        margin-top: 0px;    
+      }
+      &:nth-child(1){
+        left: 2px;
+        top: 3px;
+      }
+      &:nth-child(2){
+        left: calc(50% - 2px);
+        top: 3px;
+      }
+      &:nth-child(1),
+      &:nth-child(6){
+        @include rotate(45deg);
+      }
+      &:nth-child(2),
+      &:nth-child(5){
+        @include rotate(-45deg);
+      }
+      &:nth-child(3){
+        left: -50%;
+        opacity: 0;
+      }
+      &:nth-child(4){
+        left: 100%;
+        opacity: 0;
+      }
+      &:nth-child(5){
+        left: 2px;
+        top: 14px;
+      }
+      &:nth-child(6){
+        left: calc(50% - 2px);
+        top: 14px;
+      }
+    }
+    &.collapsed{
+      .icon-bar{
+        background-color: $btnColorWhite;                        
+        &:nth-child(1),
+        &:nth-child(2){
+          top: 0px;
+          @include rotate(0deg);
+        }
+        &:nth-child(3),
+        &:nth-child(4){
+          top: 8px;
+          @include rotate(0deg);
+          opacity: 1;
+        }
+        &:nth-child(5),
+        &:nth-child(6){
+          top: 16px;
+          @include rotate(0deg);
+        }
+        &:nth-child(odd){
+          left: 0px;
+          border-radius: 9px 0 0 9px;
+        }
+        &:nth-child(even){
+          left: 50%;
+          border-radius: 0 9px 9px 0;
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+// XS, SM
+@media ( max-width: 991px ){
+  .header{
+    .navbar-brand{
+      margin-left: 15px;
+      margin-right: 15px;
+    }
+    .no-gutters{
+      width: 100%;
+    }
+    .navbar-collapse{
+      padding: 0px;
+      margin-top: 15px;  
+    }
+    &.active-header{
+      #naBarLinks{
+        li{
+          a{
+            background-color: transparent;
+          }
+          &.active{
+            a{
+              color: $headerNavBarLinksInactive;
+              &:hover, &:focus{
+                color: $headerNavBarLinksInactive;
+              }
+            }
+          }
+        }
+      }
+      .navbar-collapse{
+        &.show{
+          background-color: transparent;
+        }
+      }
+    }
+    #naBarLinks{
+      li{
+        a{
+          padding: 4px 15px;
+          border: 0px none;
+          border-radius: 0px;
+          color: $headerNavBarLinksOn;    
+          background-color: $headerBgColor;
+          &:hover, &:focus{   
+            border: 0px none;  
+            color: $headerNavBarLinksOn;
+            background-color: $headerBgColor;
+          }    
+        }
+        &:hover, &:focus{
+          a{   
+            border: 0 none;  
+            background-color: $headerNavItemHoverMobile;
+          }
+        }
+        &.active{
+          a{   
+            border: 0 none;  
+            background-color: $headerNavBarLinksOn;
+            color: $headerNavBarLinksInactive;
+            &:hover, &:focus{
+              background-color: $headerNavBarLinksOn;
+              color: $headerNavBarLinksInactive;
+            }
+          }
+        }
+      }
+    }
+  }  
+}

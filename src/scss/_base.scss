@@ -1,0 +1,518 @@
+/* VARIABLES */
+$textColorGray: #636363;
+$textColorDefault: #3f3f3f;
+$textColorBlue: #2858E9;
+$textColorGreen: #1ABD5A;
+$textColorRed: #E92828;
+$linkLineColorBlue: #2858E9;
+$btnColorBlue: #2858E9;
+$btnColorWhite: #fff;
+$inputBlueColor: #2858E9;
+$bgGray: #D8D8D8;
+$bgIcnCircle: #ECECEC;
+$bgFacebook: #3b5998;
+$bgTwitter: #1da1f2;
+$bgLinkedin: #007bb5;
+$bgGPlus: #db4437;
+
+/* CUSTOM FONTS */
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,500,700');
+
+
+/* GENERAL STYLES */
+// ----------------------------------------------------------------------------
+body{
+  @include fontMontserrat(15px, 300);
+  line-height: 24px;
+  // MD, XL and LG Screen
+  @media ( max-width: 992px ){
+    .container{
+      max-width: 100%;
+    }
+  }
+  // MD, XL and LG Screen
+  @media ( min-width: 992px ){
+  }
+
+  // PARAGRAPH SETTING
+  p{
+    @include fontMontserrat(15px, 300);
+    line-height: 24px;
+
+    @media ( min-width: 992px ){
+    }
+  }
+
+  .wrapper{
+    >section{
+      position: relative;
+    }
+  }
+}
+
+.position-initial{
+  position: initial;
+}
+
+
+/* TITLES */
+// ----------------------------------------------------------------------------
+h1{
+  @include fontMontserrat(21.6px,700);
+  line-height : 24px;
+}
+h2{
+  @include fontMontserrat(23px,700);
+  line-height : 28px;
+}
+h3{
+  @include fontMontserrat(16px,700);
+  line-height : 22px;
+}
+h4{
+  @include fontMontserrat(16px,700);
+  line-height : 24px;
+}
+h5{
+  @include fontMontserrat(14px,700);
+  line-height : 30px;
+}
+h6{
+  @include fontMontserrat(16px,700);
+  line-height : 26px;
+}
+
+// MD, XL and LG Screen
+@media ( min-width: 992px ){
+  h1{
+    @include fontMontserrat(36px,700);
+    line-height : 44px;
+  }
+  h2{
+    @include fontMontserrat(27px,700);
+    line-height : 33px;
+  }
+  h3{
+    @include fontMontserrat(20px,700);
+    line-height : 34px;
+  }
+  h4{
+    @include fontMontserrat(16px,700);
+    line-height : 24px;
+  }
+  h5{
+    @include fontMontserrat(14px,700);
+    line-height : 30px;
+  }
+  h6{
+    @include fontMontserrat(16px,700);
+    line-height : 26px;
+  }
+}
+
+/* BUTTONS */
+// ----------------------------------------------------------------------------
+.btn{
+  padding: 8px 33px;
+  border-radius: 5px;
+  @include fontMontserrat(14px,700);
+  @include box-shadow-out(0px, 0px, 0px, 0px, 0);
+  @include transition(all, 300ms ,ease);
+  &:hover,
+  &:focus{
+    @include transition(all, 300ms ,ease);
+  }
+  &.btn-blue{
+    background-color: $btnColorBlue;
+    color: $btnColorWhite;
+    &:hover,
+    &:focus{
+      background-color: darken($btnColorBlue, 10%);
+      border-radius: 30px;
+    }
+  }
+}
+
+.btn-social{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 100%;
+  border: 1px solid $btnColorWhite;
+  background-color: transparent;
+  color: $btnColorWhite;
+  @include transition(all, 300ms ,ease);
+  &:hover{
+    @include transition(all, 300ms ,ease);
+    color: $btnColorWhite;
+    &.btn-facebook{
+      background-color: $bgFacebook;
+      border-color: $bgFacebook;      
+    }
+    &.btn-twitter{
+      background-color: $bgTwitter;
+      border-color: $bgTwitter;
+    }
+    &.btn-linkedin{
+      background-color: $bgLinkedin;
+      border-color: $bgLinkedin;
+    }
+    &.btn-gplus{
+      background-color: $bgGPlus;
+      border-color: $bgGPlus;
+    }
+  }  
+}
+
+.btn-info{
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 35px;
+  height: 35px;
+  border-radius: 100%;
+  background-color: transparent;
+  color: $btnColorWhite;
+  @include transition(all, 300ms ,ease);
+  margin-right: 5px;
+  &.btn-blue{
+    background-color: $btnColorBlue;
+    @include transition(all, 300ms ,ease);
+  }
+}
+
+// MD, XL and LG Screen
+@media ( min-width: 992px ){
+}
+
+
+/* TEXT COLOR */
+// ----------------------------------------------------------------------------
+.text-gray{
+  color: $textColorGray;
+}
+.text-default{
+  color: $textColorDefault;
+}
+.text-blue{
+  color: $textColorBlue;
+}
+.text-green{
+  color: $textColorGreen;
+}
+.text-red{
+  color: $textColorRed;
+}
+.text-underline{
+  border-bottom: 1px solid;
+  padding-bottom: 8px;
+}
+
+
+/* TITLE */ 
+// ----------------------------------------------------------------------------
+.title{
+  padding: 0px;
+  margin: 0 0 20px;
+  &:after{
+    content: '';
+    background-repeat: no-repeat;
+    background-position: left top;
+    display: block;
+    margin-top: 15px;
+    height: 4px;
+  }
+  &.title-line-center,
+  &.title-line-left{    
+    &:after{
+      width: 119px;
+      background-image: url(../images/line_bottom_left_sm.svg);
+      margin-left: initial;
+      margin-right: initial;
+    }
+  }
+  &.title-line-left-white{    
+    &:after{
+      width: 119px;
+      background-image: url(../images/line_white_bottom_left_sm.svg);
+    }
+  }
+}
+
+// MD, XL and LG Screen
+@media ( min-width: 992px ){ 
+  .title{
+    margin: 0 0 30px;
+    &:after{
+      margin-top: 20px;
+      height: 5px;
+    }
+    &.title-line-center{    
+      &:after{
+        width: 168px;
+        margin-left: auto;
+        margin-right: auto;
+        background-image: url(../images/line_bottom_center_lg.svg);
+      }
+    }
+    &.title-line-left{    
+      &:after{
+        width: 148px;
+        background-image: url(../images/line_bottom_left_lg.svg);
+      }
+    }
+    &.title-line-left-white{    
+      &:after{
+        width: 148px;
+        background-image: url(../images/line_white_bottom_left_lg.svg);
+      }
+    }
+  }
+}
+
+
+/* TITLE HORIZONTAL */ 
+// ----------------------------------------------------------------------------
+.link-line{
+  @include fontMontserrat(16px, 300);
+  @include transition(all, 300ms ,ease);
+  span{
+    @include transition(all, 300ms ,ease);
+  }
+  &:hover{
+    text-decoration: none;
+    @include transition(all, 300ms ,ease);
+    span{
+      margin-right: 10px;
+      @include transition(all, 300ms ,ease);
+    }
+  }
+  &.link-blue{
+    color: $linkLineColorBlue;
+    &:focus,
+    &:hover{
+      color: lighten($linkLineColorBlue, 10%);
+    }
+  }
+  &.link-white{
+    color: $btnColorWhite;
+    &:focus,
+    &:hover{
+      color: lighten($linkLineColorBlue, 10%);
+    }
+  }
+}
+
+// MD, XL and LG Screen
+@media ( min-width: 992px ){
+}
+
+/* FORM HORIZONTAL */ 
+// ----------------------------------------------------------------------------
+
+input, textarea{
+  &:focus{    
+    &::-webkit-input-placeholder {
+      opacity: 0;
+      @include transition(all, 300ms, ease);
+    }    
+  }
+}
+
+
+form{
+  .form-control{
+    border: 1px solid $btnColorWhite;
+    border-radius: 0;
+    background-color: transparent;
+    @include fontMontserrat(13px, 400);
+    color: $btnColorWhite;
+    @include placeholder-color(darken($btnColorWhite, 10%));
+    &:focus{
+      @include box-shadow-out(0px, 0px, 0px, 0px, 0);
+      background-color: transparent;
+      border-color: $btnColorBlue;
+      @include placeholder-color(darken($btnColorWhite, 10%));
+    }
+  }
+  .error{
+    color: red;
+  }
+  .form-group{
+    margin-bottom: 20px;
+  }
+}
+
+/* PANEL */
+// ----------------------------------------------------------------------------
+.panel{
+  padding: 20px 30px;
+  border-radius: 0px;
+  @include fontMontserrat(13px, 400);
+  @include box-shadow-out(0px, 0px, 15px, 0px, 0.15);
+  @include transition(all, 300ms ,ease);
+  background-color: $btnColorWhite;
+  position: relative;
+  height: 100%;
+  .icn-wrapper{
+    width: 90px;
+    height: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $bgIcnCircle;
+    border-radius: 100%;
+    margin: 0px auto 15px;
+
+  }
+  h4{
+    color: $textColorDefault;
+    font-size: 16px;
+    line-height: 23px;
+    margin: 0 0 15px;
+  }
+  p{
+    color: $textColorDefault;
+    font-size: 13px;
+    line-height: 20px;
+  }
+  &:hover, &:focus{
+    background-color: $btnColorBlue;    
+    @include box-shadow-out(0px, 0px, 15px, 0px, 0.25);
+    .icn-wrapper{
+      @include box-shadow-out(0px, 2px, 4px, 0px, 0.5);
+    }
+    h4, p{
+      color: $btnColorWhite;
+    }
+  }
+}
+// MD, XL and LG Screen
+@media ( min-width: 992px ){
+}
+
+/* LINK COLOR */
+// ----------------------------------------------------------------------------
+.link{
+  &:hover, &:focus{
+    text-decoration: none;
+  }
+  &.link-default{
+    color: $textColorDefault;
+    &:focus,
+    &:hover{
+      color: darken($textColorDefault, 10%);
+    }
+  }
+  &.link-blue{
+    color: $textColorBlue;
+    &:focus,
+    &:hover{
+      color: darken($textColorBlue, 10%);
+    }
+  }
+}
+
+/* LIST */
+// ----------------------------------------------------------------------------
+.list-wrapper{
+  .list{
+    margin-bottom: 20px;
+    border-top-width: 2px;
+    border-top-style: solid;
+    padding-top: 10px;
+    small{
+      line-height: 100%;
+    } 
+    h5{
+      font-size: 16px;
+      line-height: 22px;
+      margin-bottom: 0px;
+    }
+    p{
+      font-size: 13px;
+      line-height: 18px;
+    }
+    &.list-blue{
+      border-top-color: $textColorBlue;
+    }
+  }
+}
+// MD, XL and LG Screen
+@media ( min-width: 992px ){
+  .list-wrapper{
+    .list{
+      margin-bottom: 40px;
+    }
+  }
+}
+
+/* ANIMATION */
+// ----------------------------------------------------------------------------
+
+// WAVE
+// ----
+@keyframes waveUp{
+  0% {
+    opacity:0.5;
+    transform:  scaleX(1.00) scaleY(1.00) ;
+  }
+  100% {
+    opacity:0;
+    transform:  scaleX(2.00) scaleY(2.00) ;
+  }
+}
+
+.wave-icon{
+  position: relative;
+  &:after{
+    content: "";
+    border-radius: 100%;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    animation: waveUp linear 1.5s infinite;
+    z-index: -1;
+  }
+  &.wave-blue{
+    &:after{
+      background-color: $textColorBlue;
+    }
+  }
+}
+
+// Bounce
+// ------
+@-webkit-keyframes bounce {
+ 0%, 20%, 50%, 80%, 100% {-webkit-transform: translateY(0);} 
+ 40% {-webkit-transform: translateY(-30px);}
+ 60% {-webkit-transform: translateY(-15px);}
+}
+
+@-moz-keyframes bounce {
+ 0%, 20%, 50%, 80%, 100% {-moz-transform: translateY(0);}
+ 40% {-moz-transform: translateY(-30px);}
+ 60% {-moz-transform: translateY(-15px);}
+}
+
+@-o-keyframes bounce {
+ 0%, 20%, 50%, 80%, 100% {-o-transform: translateY(0);}
+ 40% {-o-transform: translateY(-30px);}
+ 60% {-o-transform: translateY(-15px);}
+}
+@keyframes bounce {
+ 0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+ 40% {transform: translateY(-30px);}
+ 60% {transform: translateY(-15px);}
+}
+
+.bounce{
+  animation: bounce 2s infinite;
+  -webkit-animation: bounce 2s infinite;
+  -moz-animation: bounce 2s infinite;
+  -o-animation: bounce 2s infinite;
+}
